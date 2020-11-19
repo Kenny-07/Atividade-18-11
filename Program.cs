@@ -7,23 +7,45 @@ namespace Atividade_18_11
         static void Main(string[] args)
         {
 
-            string login;
-            string senha;
-
+            string nome;
+            int idade;
+            float salario;
+            string estadoCivil;
+            
             do{
-            Console.WriteLine("Digite seu Login: ");
-            login = (Console.ReadLine());
-            Console.WriteLine("Digite sua Senha ( lembre-se que a senha deve ser diferente do Login ): ");
-            senha = (Console.ReadLine());
+                Console.WriteLine("Digite seu Nome:");
+                nome = Console.ReadLine();
 
-            if(login == senha ){
-                Console.WriteLine("Senha Inválida, tente novamente.");
+                Console.WriteLine("Digite sua Idade:");
+                idade = int.Parse(Console.ReadLine());
 
-            }
+                Console.WriteLine("Digite seu Salario:");
+                salario = float.Parse(Console.ReadLine());
 
-            } while (login == senha);
+                Console.WriteLine("Digite seu Estado Civil: S - Solteiro; C - Casado; V - Viuvo; D - Divorciada");
+                estadoCivil = (Console.ReadLine());
 
-            Console.WriteLine("Login concluido!");
+                if(nome == ""){Console.WriteLine("Defina um nome valido"); nome = "null";}
+
+                if(idade < 0 || idade >150){ Console.WriteLine("Defina uma idade valido"); idade = 1;}
+
+                if(salario == 0){ Console.WriteLine("Defina um salario valido"); salario = 0;}
+
+                if(estadoCivil == "S" || estadoCivil == "C" || estadoCivil == "V" || estadoCivil == "D"){}
+                
+                else{
+                    Console.WriteLine("Defina um estado civil valido");
+                    estadoCivil = "";
+                }
+            }while(nome == "" || idade == 1 || salario == 0 || estadoCivil == "" );
+
+            Console.WriteLine("Confirme seus dados");
+            Console.WriteLine("Nome: " + nome);
+            Console.WriteLine("Idade: " + idade);
+            Console.WriteLine("Salario: " + salario);
+            Console.WriteLine("Estado Civil: " + estadoCivil);
+
+            Console.WriteLine("Validação concluida");
         }
     }
 }

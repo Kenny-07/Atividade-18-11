@@ -6,20 +6,24 @@ namespace Atividade_18_11
     {
         static void Main(string[] args)
         {
-            int nota;
+
+            string login;
+            string senha;
 
             do{
-            Console.WriteLine("Digite um número de 0 a 10 para ganhar um Pc Gamer, boa sorte!");
-            nota = int.Parse(Console.ReadLine());
+            Console.WriteLine("Digite seu Login: ");
+            login = (Console.ReadLine());
+            Console.WriteLine("Digite sua Senha ( lembre-se que a senha deve ser diferente do Login ): ");
+            senha = (Console.ReadLine());
 
-            if(nota <0 || nota >10){
-                Console.WriteLine("Nota inválida, digite um valor entre 0 a 10.");
-                nota = int.Parse(Console.ReadLine());
+            if(login == senha ){
+                Console.WriteLine("Senha Inválida, tente novamente.");
+
             }
 
-            } while (nota <0 || nota >10);
+            } while (login == senha);
 
-            Console.WriteLine("Retire seu Pc gamer na Casas Bahia mais próxima de sua residencia!");
+            Console.WriteLine("Login concluido!");
         }
     }
 }
